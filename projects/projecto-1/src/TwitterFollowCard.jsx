@@ -24,7 +24,6 @@ export function TwitterFollowCard({username='null', name='null'}) {
                     {buttonText}
                 </button>
             </aside>
-
         </article>
     )
 }
