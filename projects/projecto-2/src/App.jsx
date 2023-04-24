@@ -7,8 +7,14 @@ import {WinnerModal} from "./components/Winner.jsx";
 import {Board} from "./components/Board.jsx";
 
 function App() {
-  const [board, setBoard] = useState(Array(9).fill(null))
-  const [turn, setTurn] = useState(turns.X)
+  const [board, setBoard] = useState( () => {
+      const boardFromStorage = window.localStorage.getItem('board')
+      return boardFromStorage ? JSON.parse(boardFromStorage) : Array(9).fill(null)
+  })
+  const [turn, setTurn] = useState( () => {
+      const turnFromStorage = window.localStorage.getItem('turn')
+      return turnFromStorage ?? turns.X
+  })
   const [winner, setWinner] = useState(null)
 
   const checkWinner = (boardToCheck) => {
@@ -43,6 +49,9 @@ function App() {
 
       const newTurn = turn === turns.X ? turns.O : turns.X
       setTurn(newTurn)
+
+      window.localStorage.setItem('board', JSON.stringify(newBoard))
+      window.localStorage.setItem('turn', newTurn)
 
       const newWinner = checkWinner(newBoard)
       if (newWinner) {
