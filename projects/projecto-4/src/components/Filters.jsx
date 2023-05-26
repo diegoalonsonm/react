@@ -38,13 +38,13 @@ export function Filters() {
       <div>
         <label htmlFor={categoryFilterId}>Category:</label>
         <select id={categoryFilterId} onChange={handleChangeCategory}>
-          <option value="all">all</option>
-          <option value="home-decoration">home-decoration</option>
-          <option value="laptops">laptops</option>
-          <option value="smartphones">smartphones</option>
-          <option value="fragrances">fragrances</option>
-          <option value="skincare">skincare</option>
-          <option value="groceries">groceries</option>
+          <option value="all">All</option>
+          <option value="home-decoration">Home Decoration</option>
+          <option value="laptops">Laptops</option>
+          <option value="smartphones">Smartphones</option>
+          <option value="fragrances">Fragrances</option>
+          <option value="skincare">Skin-Care</option>
+          <option value="groceries">Groceries</option>
         </select>
       </div>
     </section>

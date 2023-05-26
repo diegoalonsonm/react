@@ -3,7 +3,7 @@ import { useId } from 'react'
 import './Cart.css'
 import { useCart } from '../hooks/useCart.jsx'
 
-function CartItem ({thumbnail, price, title, quantity, addToCart}) {
+function CartItem ({thumbnail, price, title, quantity, addToCart, removeFromCart}) {
   return (
     <li>
       <img src={thumbnail} alt={title}/>
@@ -36,9 +36,10 @@ export function Cart () {
             />
           ))}
         </ul>
-        <button onClick={clearCart}>
+        <button className="SC-button" onClick={clearCart}>
           <ClearCartIcon />
         </button>
+        <h1>Total:</h1>
       </aside>
     </>
   )

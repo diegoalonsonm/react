@@ -8,7 +8,7 @@ export function Footer () {
 
   return (
     <footer className='footer'>
-      <h5>Shopping Cart con useContext & useReducer</h5>
+      <h5>Shopping Cart with useContext & useReducer</h5>
     </footer>
   )
 }
